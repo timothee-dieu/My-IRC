@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include header.ejs %>
+  <title>MyIRC</title>
+</head>
+<body>
+
+<nav class="nav-extended deep-purple darken-3">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center"><span class='orange-text text-lighten-2'>#</span>myIRC</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"></a>
+      <ul class='black' id="nav-mobile">
+        <li><a href="/">Bonjour, <%= user.login %></a></li>
+        <li><a href="/settings"><i class="material-icons">settings</i></a></li>
+        <li><a href="/logout"><i class="material-icons">power_settings_new</i></a></li>
+      </ul>
+      <ul class="tabs tabs-transparent">
+      </ul>
+    </div>
+  </nav>
+
+           
+
+<div class='container'>
+  <div class='card'>
+    <div class='card-content'>
+      <span class="card-title">Administration</span>
+      <% for (var j = 0; j < channels.length; j++) { %>
+        <form id='edit<%= j %>' class="col s12" method='post' action='/channel/edit'></form>
+      <% } %>
+      <% for (var j = 0; j < channels.length; j++) { %>
+        <form id='remove<%= j %>' class="col s12" method='post' action='/channel/remove'></form>
+      <% } %>
+        <form id='add' class="col s12" method='post' action='/channel/add'></form>
+
+        <label for='channel_name'>Créer une salle</label> 
+        <input id='channel_name' type="text" name="name" form='add' placeholder='Nom de la salle'>
+        <input class='btn deep-purple darken-3' type="submit" value='Ajouter' form='add'>
+      <table>
+        <thead>
+          <tr>
+              <th data-field="id">id</th>
+              <th data-field="name">Nom</th>
+              <th data-field="price">Users</th>
+              <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- <tr>
+            <td>Créer un channel:</td>
+            <td><input type="text" name="id" form='add' placeholder='Nom de la salle'></td>
+            <td></td>
+            <td><input class='btn' type="submit" value='Ajouter' form='add'></td>
+          </tr> -->
+          <% for (var i = 0; i < channels.length; i++) { %>
+            <tr>
+              <td><%= channels[i]._id %></td>
+              <td><input type="text" name="name" form='edit<%= i %>' value='<%= channels[i].name %>'></td>
+              <td><%= channels[i].users.length %></td>
+              <td>
+              <input type="text" name="id" value='<%= channels[i]._id %>' form='edit<%= i %>' style='display:none'>
+                <input class='btn deep-purple darken-3'  type="submit" value='OK' form='edit<%= i %>'>
+                <input type="text" name="id" value='<%= channels[i]._id %>' form='remove<%= i %>' style='display:none'>
+                <input class='btn red' type="submit" value='Supprimer' form='remove<%= i %>'>
+              </td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+<% include scripts.ejs %>
+</body>
+</html>

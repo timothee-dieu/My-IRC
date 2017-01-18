@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <% include header.ejs %>
+</head>
+<body>
+
+<nav class="nav-extended deep-purple darken-3">
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo center"><span class='orange-text text-lighten-2'>#</span>myIRC</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"></a>
+      <ul class='black' id="nav-mobile">
+        <li><a href="/">Bonjour, <%= user.login %></a></li>
+        <li><a href="/settings"><i class="material-icons">settings</i></a></li>
+        <li><a href="/logout"><i class="material-icons">power_settings_new</i></a></li>
+      </ul><!-- 
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="/">Bonjour, <%= user.login %></a></li>
+        <li><a href="/settings"><i class="material-icons">settings</i></a></li>
+        <li><a href="/logout"><i class="material-icons">power_settings_new</i></a></li>
+      </ul> -->
+      <ul class="tabs tabs-transparent">
+      </ul>
+    </div>
+  </nav>
+
+           
+
+<div class='container'>
+  <div class='card'>
+    <div class='card-content'>
+      <span class="card-title">Modifier mes informations</span>
+      <form class="col s12" method='post' action='/settings'>
+        <div class="row">
+          <div class="input-field col s12">
+            <input  id="login" type="text" name="login" class="validate" value="<%= user.login %>">
+            <label for="login">Login</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="password" type="password" name="password" class="validate" value="<%= user.password %>">
+            <label for="password">Mot de passe</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input name='email' id="email" type="email" class="validate" value="<%= user.email %>">
+            <label for="email">E-mail</label>
+          </div>
+        </div>
+        <div class='row'>
+          <div class='input-field col s12'>
+            <input class='btn' type="submit" value="Modifier">
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<% include scripts.ejs %>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "myIRC",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Une application Express",
+  "keywords": [],
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "ejs": "^2.5.2",
+    "express": "^4.14.0",
+    "express-flash": "0.0.2",
+    "express-session": "^1.14.2",
+    "materialize-css": "^0.97.8",
+    "mongodb": "^1.4.40",
+    "mongoose": "^4.6.8",
+    "nodemon": "^1.11.0",
+    "socket.io": "^1.6.0"
+  },
+  "author": "Tim",
+  "license": "",
+  "devDependencies": {}
+}

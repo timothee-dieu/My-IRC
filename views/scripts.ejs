@@ -1,0 +1,12 @@
+<script src='js/jquery.js' type="text/javascript"></script>
+<script src='js/materialize.min.js' type="text/javascript"></script>
+<script src='js/chat.js' type="text/javascript"></script>
+<script src='/socket.io/socket.io.js' type="text/javascript"></script>
+<% if (messages.info) { %>
+<script type="text/javascript">
+	$(function()
+	{
+		Materialize.toast('<%= messages.info %>', 4000);
+	});
+</script>
+<% } %>

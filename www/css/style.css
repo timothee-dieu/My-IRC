@@ -1,0 +1,106 @@
+html, body {
+    margin: 0;
+    height: 100%;
+    box-sizing: border-box;
+   /* overflow: hidden;*/
+}
+
+.tab_container
+{
+	height: 90%;
+	margin: 0;
+}
+
+.chat_container, .list_container
+{
+	height: 100%;
+}
+
+.chat_content
+{
+	height: 70%;
+	word-wrap: break-word;
+	overflow-y: scroll;
+}
+
+.list_users
+{
+	padding: 5px 14.5px 5px 14.5px!important;
+}
+
+.list_users_join
+{
+	padding: 0!important;
+}
+
+.chat_send_container
+{
+	height: 10%;
+}
+
+.chat_send
+{
+	height: 76.4px;
+	width: 100%;
+}
+
+/* label focus color */
+.chat_input:focus + label 
+{
+	color: #4527a0!important;
+}
+
+/* label underline focus color */
+.chat_input:focus 
+{
+	border-bottom: 1px solid #4527a0!important;
+	box-shadow: 0 1px 0 0 #4527a0!important;
+}
+
+.input-field
+{
+	/*padding: 0!important;*/
+}
+
+.collapsible-header, .collapsible-header
+{
+	border: none!important;
+}
+
+
+.btn-join
+{
+	width: 100%;
+	height: 40px;
+	color: white;
+	border: none;
+}
+
+.list_container .collection-item
+{
+	transition: background-color 0.5s;
+	cursor: pointer;
+}
+
+.list_container .collection-item:hover
+{
+	background-color: #ffd54f;
+}
+
+.system
+{
+	color: #f57f17;
+	font-weight: bold;
+}
+
+.add-channel
+{
+	width: 100%;
+	box-shadow: none;
+}
+
+.channel-input
+{
+	margin: 0px!important;
+	text-align: center;
+}
